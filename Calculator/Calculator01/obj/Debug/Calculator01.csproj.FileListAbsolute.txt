@@ -1,0 +1,7 @@
+C:\Users\jpscott\Desktop\CalculatorMany\Calculator\Calculator01\bin\Debug\Calculator01.exe.config
+C:\Users\jpscott\Desktop\CalculatorMany\Calculator\Calculator01\bin\Debug\Calculator01.exe
+C:\Users\jpscott\Desktop\CalculatorMany\Calculator\Calculator01\bin\Debug\Calculator01.pdb
+C:\Users\jpscott\Desktop\CalculatorMany\Calculator\Calculator01\obj\Debug\Calculator01.csproj.AssemblyReference.cache
+C:\Users\jpscott\Desktop\CalculatorMany\Calculator\Calculator01\obj\Debug\Calculator01.csproj.CoreCompileInputs.cache
+C:\Users\jpscott\Desktop\CalculatorMany\Calculator\Calculator01\obj\Debug\Calculator01.exe
+C:\Users\jpscott\Desktop\CalculatorMany\Calculator\Calculator01\obj\Debug\Calculator01.pdb

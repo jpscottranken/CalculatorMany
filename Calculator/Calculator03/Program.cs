@@ -1,0 +1,153 @@
+﻿using System;
+using static System.Console;
+
+//  Version03:
+//  All variables local to Main()
+//  Variable passing02 - ref parameters
+
+namespace Calculator03
+{
+    internal class Program
+    {
+        static string resultQuot = "";
+        static string resultMod = "";
+
+        static void Main(string[] args)
+        {
+            int num1 = 0;
+            int num2 = 0;
+            int sum  = 0;
+            int diff = 0;
+            int prod = 0;
+            decimal quot = 0m;
+            int mod  = 0;
+
+            while (1 == 1)
+            {
+                Clear();
+                InputNumber1(ref num1);
+                WriteLine($"The value of num1 is:\t{num1}");
+                InputNumber2(ref num2);
+                WriteLine($"The value of num2 is:\t{num2}");
+                CalculateSum(num1, num2, ref sum);
+                CalculateDiff(num1, num2, ref diff);
+                CalculateProd(num1, num2, ref prod);
+                CalculateQuot(num1, num2, ref quot);
+                CalculateMod(num1, num2, ref mod);
+                ShowResults(num1, num2, sum, diff, prod, quot, mod);
+            }
+        }
+
+        static void InputNumber1(ref int num1)
+        {
+            string numStr;
+            bool result;
+            int number;
+
+            Write("Enter integer:\t\t");
+            numStr = ReadLine();
+
+            result = int.TryParse(numStr, out number);
+            if (!result)
+            {
+                WriteLine("Illegal Input. Try Again.");
+                ReadLine();
+                InputNumber1(ref num1);
+            }
+            else
+            {
+                num1 = number;
+            }
+        }
+
+        static void InputNumber2(ref int num2)
+        {
+            string numStr;
+            bool result;
+            int number;
+
+            Write("Enter integer:\t\t");
+            numStr = ReadLine();
+
+            result = int.TryParse(numStr, out number);
+            if (!result)
+            {
+                WriteLine("Illegal Input. Try Again.");
+                ReadLine();
+                InputNumber2(ref num2);
+            }
+            else
+            {
+                num2 = number;
+            }
+        }
+        static void CalculateSum(int num1, int num2, ref int sum)
+        {
+            sum = num1 + num2;
+        }
+
+        static void CalculateDiff(int num1, int num2, ref int diff)
+        {
+            diff = num1 - num2;
+        }
+
+        static void CalculateProd(int num1, int num2, ref int prod)
+        {
+            prod = num1 * num2;
+        }
+
+        static void CalculateQuot(int n1, int n2, ref decimal quot)
+        {
+            if (n2 == 0)
+            {
+                resultQuot = "Illegal Divide";
+                quot = 0.0m;
+                return;
+            }
+
+            quot = (decimal)n1 / (decimal)n2;
+        }
+
+        static void CalculateMod(int n1, int n2, ref int mod)
+        {
+            if (n2 == 0)
+            {
+                resultMod = "Illegal Mod Divide";
+                mod = 0;
+                return;
+            }
+
+            mod = n1 % n2;
+        }
+
+        static void ShowResults(int n1, int n2,
+                                int s, int d,
+                                int p, decimal q, int m)
+        {
+            WriteLine($"\n\nYour Final Results:");
+            WriteLine($"{n1} + {n2} = {s}");
+            WriteLine($"{n1} - {n2} = {d}");
+            WriteLine($"{n1} * {n1} = {p}");
+
+            if (resultQuot.Trim() != "")
+            {
+                WriteLine($"{n1} / {n2} = {resultQuot}");
+            }
+            else
+            {
+                WriteLine($"{n1} / {n2} = {q:n2}");
+            }
+
+            if (resultMod.Trim() != "")
+            {
+                WriteLine($"{n1} / {n2} = {resultMod}");
+            }
+            else
+            {
+                WriteLine($"{n1} % {n2} = {m}");
+            }
+
+            ReadLine();
+        }
+    }
+}
